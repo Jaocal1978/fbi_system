@@ -47,7 +47,7 @@ app.post("/SignIn", (req, res) =>
     { 
         const token = jwt.sign( 
             {   
-                exp: Math.floor(Date.now() / 1000) + 300, 
+                expiresIn: 120, 
                 data: user, 
             }, 
             secretKey 
